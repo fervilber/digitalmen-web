@@ -24,6 +24,7 @@ jobs:
         with:
           repository: fervilber/digitalmen
           path: content
+          token: ${{ secrets.PAT_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
