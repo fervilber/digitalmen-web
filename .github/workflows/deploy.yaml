@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Quartz Engine
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Checkout Content (digitalmen)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: fervilber/digitalmen
           path: temp_content
@@ -37,7 +37,7 @@ jobs:
           fi
 
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
 
@@ -48,7 +48,7 @@ jobs:
         run: npx quartz build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: public
 
@@ -61,5 +61,5 @@ jobs:
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
