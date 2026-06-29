@@ -1,7 +1,6 @@
 node_modules/
 public/
-content/index.md
-content/wiki/
+content/
 quartz/.quartz-cache/
 .DS_Store
 .env
