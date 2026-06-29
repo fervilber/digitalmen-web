@@ -23,8 +23,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: fervilber/digitalmen
-          path: content
+          path: temp_content
           token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Filter and Prepare Content
+        run: |
+          mkdir -p content
+          if [ -f temp_content/index.md ]; then
+            cp temp_content/index.md content/
+          fi
+          if [ -d temp_content/wiki ]; then
+            cp -r temp_content/wiki content/
+          fi
+
 
       - uses: actions/setup-node@v4
         with:
